@@ -21,8 +21,8 @@ public class ConfigClientApplication {
 		SpringApplication.run(ConfigClientApplication.class, args);
 	}
 
-	@Configuration
-	@Order(Ordered.HIGHEST_PRECEDENCE)
+//	@Configuration
+//	@Order(Ordered.HIGHEST_PRECEDENCE)
 	public static class MyPropertySourceLocator implements PropertySourceLocator{
 
 		@Override
