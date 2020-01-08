@@ -18,9 +18,12 @@ import java.util.Collection;
 @Service
 public class UserServiceProxy implements UserService {
 
+    /**
+     * 服务名
+     */
     private static final String PROVIDER_SERVER_URL_PREFIX="http://user-service-provider/";
     /**
-     * 通过REST API代理到服务器提供者
+     * 以前service是本地服务，现在通过REST API代理到服务器提供者
      */
     @Autowired
     private RestTemplate restTemplate;
@@ -28,6 +31,7 @@ public class UserServiceProxy implements UserService {
     @Override
     public boolean save(User user) {
         String userName = user.getName();
+        //要写具体的服务路径
         User returnUser = restTemplate.postForObject(PROVIDER_SERVER_URL_PREFIX+"user/save/",user,User.class);
         if(returnUser == null){
             return false;

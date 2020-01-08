@@ -16,7 +16,7 @@ public class UserServiceConsumerApplication {
 	}
 
 	/**
-	 * 声明restTemplate bean，LoadBalanced使用负载均衡，只需要制定应用的名称
+	 * 声明restTemplate bean，LoadBalanced使用负载均衡，只需要指定应用的名称
 	 * @return
 	 */
 	@Bean
